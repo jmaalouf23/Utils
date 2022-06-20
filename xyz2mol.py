@@ -599,6 +599,8 @@ def xyz2AC_vdW(atoms, xyz):
 
 
 def get_AC(mol, covalent_factor=1.5):
+    
+    #Note from Joseph- covalent_factor may need to be changed to get good results
 
     """
 
