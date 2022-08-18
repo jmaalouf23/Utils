@@ -94,7 +94,15 @@ def make_xyz_from_array(file, xyz, labels_array, include_charge=False,charge=0):
     
 
 def make_xyz_from_output(file):
+
     
+    """
+    Makes an XYZ file from the final geometry of a gaussian calulcation obtained from the output file.
+    
+    Arguments:
+    Gaussian output text file from a geom and freq calculation
+    
+    """
     
     no_to_symbol_dict={
     1:'H',
@@ -108,13 +116,6 @@ def make_xyz_from_output(file):
     }
     
     
-    """
-    Makes an XYZ file from the final geometry of a gaussian calulcation.
-    
-    Arguments:
-    Gaussian output text file from a geom and freq calculation
-    
-    """
     temp_data=cclib.io.ccread(file)
     xyz=temp_data.atomcoords[-1,:,:]
     atnos=temp_data.atomnos
